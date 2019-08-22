@@ -1,0 +1,39 @@
+package pl.kurs.spring.registration.token;
+
+import java.util.Date;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import pl.kurs.spring.registration.model.User;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Entity
+@Builder
+public class VeryficationToken {
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private int id;
+	private String token;
+	private Date createDate;
+	private Date expiredDate;
+	@OneToOne(mappedBy = "token")
+	private User user;
+
+	public void setExpiredDate(Date expiration) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
