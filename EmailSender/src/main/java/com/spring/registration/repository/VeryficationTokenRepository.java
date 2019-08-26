@@ -1,10 +1,10 @@
-package pl.kurs.spring.registration.repository;
+package com.spring.registration.repository;
 
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import pl.kurs.spring.registration.token.VeryficationToken;
+import com.spring.registration.token.VeryficationToken;
 
 public interface VeryficationTokenRepository extends JpaRepository<VeryficationToken, String> {
 	List<VeryficationToken> findByUserEmail(String email);

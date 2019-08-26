@@ -1,4 +1,4 @@
-package pl.kurs.spring.registration.controller;
+package com.spring.registration.controller;
 
 import java.util.Calendar;
 import java.util.Date;
@@ -18,15 +18,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import lombok.Data;
+import com.spring.registration.dto.UserDto;
+import com.spring.registration.model.RegistrationCommand;
+import com.spring.registration.model.User;
+import com.spring.registration.repository.UserRepository;
+import com.spring.registration.repository.VeryficationTokenRepository;
+import com.spring.registration.service.EmailSender;
+import com.spring.registration.token.VeryficationToken;
 
-import pl.kurs.spring.registration.dto.UserDto;
-import pl.kurs.spring.registration.model.RegistrationCommand;
-import pl.kurs.spring.registration.model.User;
-import pl.kurs.spring.registration.repository.UserRepository;
-import pl.kurs.spring.registration.repository.VeryficationTokenRepository;
-import pl.kurs.spring.registration.service.EmailSender;
-import pl.kurs.spring.registration.token.VeryficationToken;
+import lombok.Data;
 
 @Data
 @RestController

@@ -1,4 +1,4 @@
-package pl.kurs.spring.registration.validations;
+package com.spring.registration.validations;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

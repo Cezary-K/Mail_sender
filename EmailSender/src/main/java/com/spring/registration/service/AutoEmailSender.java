@@ -1,12 +1,13 @@
-package pl.kurs.spring.registration.service;
+package com.spring.registration.service;
 
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
+import com.spring.registration.model.User;
+
 import lombok.AllArgsConstructor;
-import pl.kurs.spring.registration.model.User;
 
 @Service
 @AllArgsConstructor

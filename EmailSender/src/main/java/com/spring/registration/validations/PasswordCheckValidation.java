@@ -1,11 +1,11 @@
-package pl.kurs.spring.registration.validations;
+package com.spring.registration.validations;
 
 import java.util.Optional;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 
-import pl.kurs.spring.registration.model.RegistrationCommand;
+import com.spring.registration.model.RegistrationCommand;
 
 public class PasswordCheckValidation implements ConstraintValidator<PasswordCheck, RegistrationCommand> {
 

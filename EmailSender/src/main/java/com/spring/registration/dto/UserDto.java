@@ -1,4 +1,4 @@
-package pl.kurs.spring.registration.dto;
+package com.spring.registration.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

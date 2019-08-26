@@ -1,4 +1,4 @@
-package pl.kurs.spring.registration.config;
+package com.spring.registration.config;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;

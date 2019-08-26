@@ -1,12 +1,13 @@
-package pl.kurs.spring.registration.validations;
+package com.spring.registration.validations;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 
 import org.springframework.stereotype.Service;
 
+import com.spring.registration.repository.UserRepository;
+
 import lombok.AllArgsConstructor;
-import pl.kurs.spring.registration.repository.UserRepository;
 
 @Service
 @AllArgsConstructor

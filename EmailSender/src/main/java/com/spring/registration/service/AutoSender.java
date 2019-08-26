@@ -1,4 +1,4 @@
-package pl.kurs.spring.registration.service;
+package com.spring.registration.service;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,9 +6,10 @@ import java.util.List;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
+import com.spring.registration.model.User;
+import com.spring.registration.repository.UserRepository;
+
 import lombok.AllArgsConstructor;
-import pl.kurs.spring.registration.model.User;
-import pl.kurs.spring.registration.repository.UserRepository;
 
 @Component
 @AllArgsConstructor

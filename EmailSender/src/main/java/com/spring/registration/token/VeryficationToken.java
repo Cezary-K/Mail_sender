@@ -1,4 +1,4 @@
-package pl.kurs.spring.registration.token;
+package com.spring.registration.token;
 
 import java.util.Date;
 
@@ -10,11 +10,12 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 
+import com.spring.registration.model.User;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import pl.kurs.spring.registration.model.User;
 
 @Data
 @AllArgsConstructor
