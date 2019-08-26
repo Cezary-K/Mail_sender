@@ -31,9 +31,4 @@ public class VeryficationToken {
 	@OneToOne(mappedBy = "token")
 	private User user;
 
-	public void setExpiredDate(Date expiration) {
-		// TODO Auto-generated method stub
-
-	}
-
 }

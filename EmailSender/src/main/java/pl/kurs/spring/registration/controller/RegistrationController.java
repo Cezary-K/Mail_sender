@@ -78,8 +78,7 @@ public class RegistrationController {
 		if (vt.getExpiredDate().getTime() - cal.getTime().getTime() <= 0) {
 			return ResponseEntity.badRequest().build();
 		}
-//		vt.getUser().setActive(true);
-//		tokenRepository.save(vt);
+
 		return ResponseEntity.noContent().build();
 
 	}
