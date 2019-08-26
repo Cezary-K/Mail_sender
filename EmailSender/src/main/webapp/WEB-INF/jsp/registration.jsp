@@ -24,7 +24,7 @@
 <form method="get" action="activeUser.jsp">
 	Wpisz EMail     <input type="text" name="user"><br /> <br />
 	Wpisz Haslo     <input type="password" name="pass"><br /> <br />
-	Potwiedz Haslo  <input type="checkpassword" name="checkpass"><br />
+	Potwierdz Haslo  <input type="checkpassword" name="checkpass"><br />
 	<br /> <input type="submit" value="Rejestruj">
 </form>
 </body>
