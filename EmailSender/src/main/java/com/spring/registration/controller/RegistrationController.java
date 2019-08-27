@@ -7,7 +7,6 @@ import java.util.UUID;
 
 import javax.validation.Valid;
 
-
 import org.modelmapper.ModelMapper;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -61,7 +60,7 @@ public class RegistrationController {
 	}
 
 	@GetMapping("/")
-	public ResponseEntity<Void> veryfication(@RequestParam("token") String token, @RequestParam("email") String email) {
+	public ResponseEntity<Void> verification(@RequestParam("token") String token, @RequestParam("email") String email) {
 		if (!tokenRepository.existsByToken(token)) {
 			return ResponseEntity.badRequest().build();
 		}
