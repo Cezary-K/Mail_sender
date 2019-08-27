@@ -19,7 +19,7 @@ public class EmailSender {
 		SimpleMailMessage msg = new SimpleMailMessage();
 		msg.setTo(newUser.getEmail());
 		msg.setFrom("a@a");
-		msg.setSubject("Email Veryfication");
+		msg.setSubject("Email Verification");
 		msg.setText(
 				"Dziekujemy za rejestracje \n potwierdz swojego maila klikajac na link ponizej \n http://localhost:8080/register/?token="
 						+ token + "&" + "email=" + newUser.getEmail());
