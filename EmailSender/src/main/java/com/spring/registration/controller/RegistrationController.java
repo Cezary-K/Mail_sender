@@ -7,7 +7,7 @@ import java.util.UUID;
 
 import javax.validation.Valid;
 
-import org.apache.catalina.filters.ExpiresFilter;
+
 import org.modelmapper.ModelMapper;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -52,7 +52,7 @@ public class RegistrationController {
 
 		VeryficationToken saved = tokenRepository.saveAndFlush(newToken);
 
-		User newUser = User.builder().email(registrationCommand.getEmail()).passoword(registrationCommand.getPassword())
+		User newUser = User.builder().email(registrationCommand.getEmail()).password(registrationCommand.getPassword())
 				.token(saved).build();
 
 		veryficationMail.sendMail(newUser, newToken.getToken());

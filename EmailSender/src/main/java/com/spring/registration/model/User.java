@@ -25,7 +25,7 @@ public class User {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private String email;
-	private String passoword;
+	private String password;
 	private boolean isActive;
 	@OneToOne()
 	@JoinColumn(name = "user_id")
