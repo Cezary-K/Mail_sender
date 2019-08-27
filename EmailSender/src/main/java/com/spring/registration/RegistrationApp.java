@@ -7,7 +7,6 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 
 @SpringBootApplication
 @EnableAsync
-@EnableScheduling
 public class RegistrationApp {
 	public static void main(String[] args) {
 		SpringApplication.run(RegistrationApp.class, args);
