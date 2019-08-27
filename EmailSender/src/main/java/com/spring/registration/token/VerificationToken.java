@@ -2,12 +2,11 @@ package com.spring.registration.token;
 
 import java.util.Date;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
+
 import javax.persistence.OneToOne;
 
 import com.spring.registration.model.User;
@@ -22,7 +21,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Entity
 @Builder
-public class VeryficationToken {
+public class VerificationToken {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;

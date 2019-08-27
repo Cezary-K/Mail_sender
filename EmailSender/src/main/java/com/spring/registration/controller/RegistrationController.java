@@ -22,9 +22,9 @@ import com.spring.registration.dto.UserDto;
 import com.spring.registration.model.RegistrationCommand;
 import com.spring.registration.model.User;
 import com.spring.registration.repository.UserRepository;
-import com.spring.registration.repository.VeryficationTokenRepository;
+import com.spring.registration.repository.VerificationTokenRepository;
 import com.spring.registration.service.EmailSender;
-import com.spring.registration.token.VeryficationToken;
+import com.spring.registration.token.VerificationToken;
 
 import lombok.Data;
 
@@ -34,14 +34,14 @@ import lombok.Data;
 public class RegistrationController {
 	private final UserRepository userRepo;
 	private final ModelMapper mapper;
-	private final EmailSender veryficationMail;
-	private final VeryficationTokenRepository tokenRepository;
+	private final EmailSender verificationMail;
+	private final VerificationTokenRepository tokenRepository;
 
 	@PostMapping("/")
 	public ResponseEntity<UserDto> addNewUser(@RequestBody @Valid RegistrationCommand registrationCommand) {
 
 		String uniqueID = UUID.randomUUID().toString();
-		VeryficationToken newToken = VeryficationToken.builder().token(uniqueID).createDate(new Date()).build();
+		VerificationToken newToken = VerificationToken.builder().token(uniqueID).createDate(new Date()).build();
 		tokenRepository.saveAndFlush(newToken);
 		Date expiration = newToken.getCreateDate();
 		Calendar c = Calendar.getInstance();
@@ -50,12 +50,12 @@ public class RegistrationController {
 		expiration = c.getTime();
 		newToken.setExpiredDate(expiration);
 
-		VeryficationToken saved = tokenRepository.saveAndFlush(newToken);
+		VerificationToken saved = tokenRepository.saveAndFlush(newToken);
 
 		User newUser = User.builder().email(registrationCommand.getEmail()).password(registrationCommand.getPassword())
 				.token(saved).build();
 
-		veryficationMail.sendMail(newUser, newToken.getToken());
+		verificationMail.sendMail(newUser, newToken.getToken());
 
 		return new ResponseEntity<UserDto>(mapper.map(userRepo.saveAndFlush(newUser), UserDto.class), HttpStatus.OK);
 	}
@@ -73,7 +73,7 @@ public class RegistrationController {
 				return ResponseEntity.badRequest().build();
 			}
 		}
-		VeryficationToken vt = tokenRepository.findByToken(token);
+		VerificationToken vt = tokenRepository.findByToken(token);
 		Calendar cal = Calendar.getInstance();
 		if (vt.getExpiredDate().getTime() - cal.getTime().getTime() <= 0) {
 			return ResponseEntity.badRequest().build();

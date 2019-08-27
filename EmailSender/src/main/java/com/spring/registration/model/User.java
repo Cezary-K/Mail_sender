@@ -8,7 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 
-import com.spring.registration.token.VeryficationToken;
+import com.spring.registration.token.VerificationToken;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -29,5 +29,5 @@ public class User {
 	private boolean isActive;
 	@OneToOne()
 	@JoinColumn(name = "user_id")
-	private VeryficationToken token;
+	private VerificationToken token;
 }
